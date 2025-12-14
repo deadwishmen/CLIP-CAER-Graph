@@ -1,0 +1,33 @@
+#!/bin/bash
+
+python main.py \
+    --mode train \
+    --exper-name test \
+    --gpu 0 \
+    --epochs 20 \
+    --batch-size 48 \
+    --lr 0.01 \
+    --lr-image-encoder 0.00001 \
+    --lr-prompt-learner 0.001 \
+    --weight-decay 0.0001 \
+    --momentum 0.9 \
+    --milestones 10 15 \
+    --gamma 0.1 \
+    --temporal-layers 1 \
+    --num-segments 16 \
+    --duration 1 \
+    --image-size 224 \
+    --seed 42 \
+    --print-freq 10 \
+    --root-dir /content/drive/MyDrive/Graph_Classroom/RAER-Education/RAER \
+    --train-annotation /content/drive/MyDrive/Graph_Classroom/RAER-Education/RAER/annotation/train.txt \
+    --test-annotation /content/drive/MyDrive/Graph_Classroom/RAER-Education/RAER/annotation/test.txt \
+    --clip-path ViT-B/32 \
+    --bounding-box-face /content/drive/MyDrive/Graph_Classroom/RAER-Education/RAER/bounding_box/face.json \
+    --bounding-box-body /content/drive/MyDrive/Graph_Classroom/RAER-Education/RAER/bounding_box/body.json \
+    --graph_dir /content/drive/MyDrive/Graph_Classroom/RAER-Education/RAER/graph \
+    --text-type class_descriptor \
+    --contexts-number 8 \
+    --class-token-position end \
+    --class-specific-contexts True \
+    --load_and_tune_prompt_learner True
