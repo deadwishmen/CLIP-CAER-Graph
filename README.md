@@ -1,4 +1,4 @@
-# CLIP-based Context-aware Academic Emotion Recognition
+<!-- # CLIP-based Context-aware Academic Emotion Recognition
 
 This repo is the official implementation for CLIP-based Context-aware Academic Emotion Recognition[[arXiv](https://arxiv.org/abs/2507.00586)]. The paper has been accepted to ICCV 2025.
 
@@ -60,4 +60,4 @@ If you find our paper useful in your research, please consider citing:
 ```
 
 ## Acknowledgment
-Our codes are mainly based on [DFER-CLIP](https://github.com/zengqunzhao/DFER-CLIP/tree/main). Many thanks to the authors!
+Our codes are mainly based on [DFER-CLIP](https://github.com/zengqunzhao/DFER-CLIP/tree/main). Many thanks to the authors! -->

@@ -5,7 +5,7 @@ python main.py \
     --exper-name test \
     --gpu 0 \
     --epochs 20 \
-    --batch-size 48 \
+    --batch-size 8 \
     --lr 0.01 \
     --lr-image-encoder 0.00001 \
     --lr-prompt-learner 0.001 \
@@ -19,13 +19,13 @@ python main.py \
     --image-size 224 \
     --seed 42 \
     --print-freq 10 \
-    --root-dir /content/drive/MyDrive/Graph_Classroom/RAER-Education/RAER \
-    --train-annotation /content/drive/MyDrive/Graph_Classroom/RAER-Education/RAER/annotation/train.txt \
-    --test-annotation /content/drive/MyDrive/Graph_Classroom/RAER-Education/RAER/annotation/test.txt \
+    --root-dir /kaggle/input/raer-dataset/RAER/RAER \
+    --train-annotation /kaggle/input/raer-dataset/RAER/RAER/annotation/train.txt \
+    --test-annotation /kaggle/input/raer-dataset/RAER/RAER/annotation/test.txt \
     --clip-path ViT-B/32 \
-    --bounding-box-face /content/drive/MyDrive/Graph_Classroom/RAER-Education/RAER/bounding_box/face.json \
-    --bounding-box-body /content/drive/MyDrive/Graph_Classroom/RAER-Education/RAER/bounding_box/body.json \
-    --graph_dir /content/drive/MyDrive/Graph_Classroom/RAER-Education/RAER/graph \
+    --bounding-box-face /kaggle/input/raer-dataset/RAER/RAER/bounding_box/face.json \
+    --bounding-box-body /kaggle/input/raer-dataset/RAER/RAER/bounding_box/body.json \
+    --graph_dir /kaggle/input/raergraphdataset/graph \
     --text-type class_descriptor \
     --contexts-number 8 \
     --class-token-position end \
