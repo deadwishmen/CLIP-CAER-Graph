@@ -28,17 +28,17 @@ class GenerateModel(nn.Module):
                                                      mlp_dim=1024,
                                                      dim_head=64)
         
-        # self.temporal_net_graph = Temporal_Transformer_Cls(num_patches=16,
-        #                                              input_dim=256,
-        #                                              depth=args.temporal_layers,
-        #                                              heads=8,
-        #                                              mlp_dim=1024,
-        #                                              dim_head=64)
+        self.temporal_net_graph = Temporal_Transformer_Cls(num_patches=16,
+                                                     input_dim=256,
+                                                     depth=args.temporal_layers,
+                                                     heads=8,
+                                                     mlp_dim=1024,
+                                                     dim_head=64)
         
-        # self.gnn_encoder = GraphContextEncoder(input_dim=512, output_dim=256)
+        self.gnn_encoder = GraphContextEncoder(input_dim=512, output_dim=256)
 
         self.clip_model_ = clip_model
-        self.project_fc = nn.Linear(512 + 512, 512)
+        self.project_fc = nn.Linear(512 + 512 + 256, 512)
         
     def forward(self, image_face, image_body, x, pos, edge_index, edge_attr, batch):
         ################# Visual Part #################
@@ -57,9 +57,9 @@ class GenerateModel(nn.Module):
         video_body_features = self.temporal_net_body(image_body_features)  # (n, 512)
 
         # Graph Part
-        # graph_embeddings = self.gnn_encoder(x, edge_index, edge_attr, batch)  # (n * t, 256)
-        # graph_embeddings = graph_embeddings.contiguous().view(n, t, 256)
-        # video_graph_features = self.temporal_net_graph(graph_embeddings)  # (n, 256)
+        graph_embeddings = self.gnn_encoder(x, edge_index, edge_attr, batch)  # (n * t, 256)
+        graph_embeddings = graph_embeddings.contiguous().view(n, t, 256)
+        video_graph_features = self.temporal_net_graph(graph_embeddings)  # (n, 256)
 
         # Concatenate the three parts
         video_features = torch.cat((video_face_features, video_body_features), dim=-1)

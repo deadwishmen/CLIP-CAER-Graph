@@ -272,7 +272,7 @@ class VideoDataset(data.Dataset):
         return self.get(record, segment_indices)
 
     def get(self, record, indices):
-        path_sq = f"/content/drive/MyDrive/Graph_Classroom/RAER-Education/{record.path}"
+        path_sq = f"/kaggle/input/raer-dataset/RAER/RAER/{record.path}"
         video_frames_path = glob.glob(os.path.join(path_sq, '*'))
         video_frames_path.sort()  
 
