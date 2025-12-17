@@ -272,8 +272,10 @@ class VideoDataset(data.Dataset):
         return self.get(record, segment_indices)
 
     def get(self, record, indices):
-        path_sq = f"/kaggle/input/raer-classroom/RAER{record.path}"
+        path_sq = f"/kaggle/input/raer-classroom/{record.path}"
+
         video_frames_path = glob.glob(os.path.join(path_sq, '*'))
+
         video_frames_path.sort()  
 
         random_num = random.random()

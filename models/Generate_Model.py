@@ -62,7 +62,7 @@ class GenerateModel(nn.Module):
         video_graph_features = self.temporal_net_graph(graph_embeddings)  # (n, 256)
 
         # Concatenate the three parts
-        video_features = torch.cat((video_face_features, video_body_features), dim=-1)
+        video_features = torch.cat((video_face_features, video_body_features, video_graph_features), dim=-1)
         video_features = self.project_fc(video_features)
         video_features = video_features / video_features.norm(dim=-1, keepdim=True)
 
