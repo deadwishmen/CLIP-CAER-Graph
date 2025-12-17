@@ -19,12 +19,12 @@ python main.py \
     --image-size 224 \
     --seed 42 \
     --print-freq 10 \
-    --root-dir /kaggle/input/raer-dataset/RAER/RAER \
-    --train-annotation /kaggle/input/raer-dataset/RAER/RAER/annotation/train.txt \
-    --test-annotation /kaggle/input/raer-dataset/RAER/RAER/annotation/test.txt \
+    --root-dir /kaggle/input/raer-classroom/RAER \
+    --train-annotation /kaggle/input/raer-classroom/RAER/annotation/train.txt \
+    --test-annotation /kaggle/input/raer-classroom/RAER/annotation/test.txt \
     --clip-path ViT-B/32 \
-    --bounding-box-face /kaggle/input/raer-dataset/RAER/RAER/bounding_box/face.json \
-    --bounding-box-body /kaggle/input/raer-dataset/RAER/RAER/bounding_box/body.json \
+    --bounding-box-face /kaggle/input/raer-classroom/RAER/bounding_box/face.json \
+    --bounding-box-body /kaggle/input/raer-classroom/RAER/bounding_box/body.json \
     --graph_dir /kaggle/input/raergraphdataset/graph \
     --text-type class_descriptor \
     --contexts-number 8 \
